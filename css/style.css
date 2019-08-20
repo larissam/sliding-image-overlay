@@ -1,0 +1,50 @@
+body {
+	text-align: center;
+	line-height: 267px;
+	font-size: 40px;
+	font-family: sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: white;
+	-webkit-font-smoothing: antialiased;
+	letter-spacing: 1px;
+}
+
+.sliding-overlay-wrapper {
+	width: 400px;
+	height: 267px;
+	margin: 20px auto;
+
+	/* Step 1A: Look up "how to hide overflow css"
+	You will need this for the overlays. */
+	overflow: hidden;
+
+	/* Step 1B: Position the overlay relative to its parent */
+	position: relative;
+	
+}
+
+.sliding-overlay {
+	width: 400px;
+	height: 267px;
+	background-color: rgba(221, 82, 56, .9);
+
+	/* Step 1C: Position the overlay directly over the image */
+	/* Step 1D: use a transform to move the overlay off the image to the left */
+	/* Step 1E: add a transition so the animation effects are smooth */
+
+	position: absolute;
+	top: 0;
+
+	transform: translateX(-100%);
+	transition: all 300ms ease-in-out;
+
+}
+
+
+/* Step 2: use a transform to move the overlay back */
+/* https://larissam.github.io/fewd_image_overlay_example/ */
+.sliding-overlay-wrapper:hover .sliding-overlay {
+	transform: translateX(0);
+
+}
